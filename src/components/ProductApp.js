@@ -36,7 +36,7 @@ const ProductApp = () => {
         setModal(!modal);
     }
 
-    const saveTask = (taskObj) => {
+    const saveProduct = (taskObj) => {
         let tempList = taskList
         tempList.push(taskObj)
         localStorage.setItem("taskList", JSON.stringify(tempList))
@@ -54,7 +54,7 @@ const ProductApp = () => {
             <div className = "product-container">
             {taskList && taskList.map((obj , index) => <Card taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> )}
             </div>
-            <CreateProduct toggle = {toggle} modal = {modal} save = {saveTask}/>
+            <CreateProduct toggle = {toggle} modal = {modal} save = {saveProduct}/>
         </div>
     );
 };
