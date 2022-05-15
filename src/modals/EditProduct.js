@@ -133,7 +133,7 @@ const EditProductPopup = ({modal, toggle, updateTask, taskObj}) => {
 
     return (
         <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>Update Task</ModalHeader>
+            <ModalHeader toggle={toggle}>Update Product</ModalHeader>
             <ModalBody>
         
                     <div className = "form-group">
