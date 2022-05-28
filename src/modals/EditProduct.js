@@ -2,132 +2,55 @@ import React, { useState , useEffect} from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const EditProductPopup = ({modal, toggle, updateTask, taskObj}) => {
-    const [taskName, setTaskName] = useState('');
-    const [description, setDescription] = useState('');
     const [brand, setBrand] = useState('');
     const [image, setImage] = useState('');
     const [price, setPrice] = useState('');
     const [style, setStyle] = useState('');
     const [colour, setColour] = useState('');
     const [size, setSize] = useState('')
-    const [coba, setCoba] = useState('');
-
-    const handleChange = (e) => {
-        
-        const {name, value} = e.target
-
-        if(name === "taskName"){
-            setTaskName(value)
-        }else {
-            setDescription(value)
-        }
-
-
-    }
     
     const secHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setBrand(value)
-        }
-
-
+        setBrand(e.target.value)
     }
 
     const thirdHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setImage(value)
-        }
-
-
+        setImage(e.target.value)
     }
 
     const fourthHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setPrice(value)
-        }
-
-
+        setPrice(e.target.value)
     }
 
     const fifthHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setStyle(value)
-        }
-
-
+        setStyle(e.target.value)
     }
 
     const sixthHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setColour(value)
-        }
-
-
+        setColour(e.target.value)
     }
 
     const seventhHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setSize(value)
-        }
-
-
+        setSize(e.target.value)
     }
 
     useEffect(() => {
-        setTaskName(taskObj.Name)
-        setDescription(taskObj.Description)
         setBrand(taskObj.Brand)
         setImage(taskObj.Image)
         setPrice(taskObj.Price)
         setStyle(taskObj.Style)
         setColour(taskObj.Colour)
         setSize(taskObj.Size)
-        setCoba(taskObj.Coba)
-        // eslint-disable-next-line
     },[])
 
     const handleUpdate = (e) => {
         e.preventDefault();
         let tempObj = {}
-        tempObj['Name'] = taskName
-        tempObj['Description'] = description
         taskObj["Brand"] = brand
         taskObj["Image"] = image
         taskObj["Price"] = price
         taskObj["Style"] = style
         taskObj["Colour"] = colour
         taskObj["Size"] = size
-        taskObj["Coba"] = coba
         updateTask(tempObj)
     }
 
@@ -138,7 +61,7 @@ const EditProductPopup = ({modal, toggle, updateTask, taskObj}) => {
         
                     <div className = "form-group">
                         <label>Name</label>
-                        <input type="text" className = "form-control" value = {brand} onChange = {secHandleChange} name = "brand"/>
+                        <input className = "form-control" value = {brand} onChange = {secHandleChange} name = "brand"/>
                     </div>
                     <div className = "form-group">
                         <label>Image</label>
