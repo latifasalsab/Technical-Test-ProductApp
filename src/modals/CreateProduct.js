@@ -2,120 +2,47 @@ import React, { useState } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const CreateProductPopup = ({modal, toggle, save}) => {
-    const [taskName, setTaskName] = useState('');
-    const [description, setDescription] = useState('');
     const [brand, setBrand] = useState('');
     const [image, setImage] = useState('');
     const [price, setPrice] = useState('');
     const [style, setStyle] = useState('');
     const [colour, setColour] = useState('');
     const [size, setSize] = useState('')
-    const [coba, setCoba] = useState('');
-
-
-    const handleChange = (e) => {
-        
-        const {name, value} = e.target
-
-        if(name === "taskName"){
-            setTaskName(value)
-        }else {
-            setDescription(value)
-        }
-
-
-    }
+    
     
     const secHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setBrand(value)
-        }
-
-
+        setBrand(e.target.value)
     }
 
     const thirdHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setImage(value)
-        }
-
-
+        setImage(e.target.value)
     }
 
     const fourthHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setPrice(value)
-        }
-
-
+        setPrice(e.target.value)
     }
 
     const fifthHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setStyle(value)
-        }
-
-
+        setStyle(e.target.value)
     }
 
     const sixthHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setColour(value)
-        }
-
-
+        setColour(e.target.value)
     }
 
     const seventhHandleChange = (e) => {
-        
-        const {coba, value} = e.target
-
-        if(coba === "coba"){
-            setCoba(value)
-        }else {
-            setSize(value)
-        }
-
-
+        setSize(e.target.value)
     }
 
     const handleSave = (e) => {
         e.preventDefault()
         let taskObj = {}
-        taskObj["Name"] = taskName
-        taskObj["Description"] = description
         taskObj["Brand"] = brand
         taskObj["Image"] = image
         taskObj["Price"] = price
         taskObj["Style"] = style
         taskObj["Colour"] = colour
         taskObj["Size"] = size
-        taskObj["Coba"] = coba
         save(taskObj)
 
     }
@@ -152,7 +79,7 @@ const CreateProductPopup = ({modal, toggle, save}) => {
                 
             </ModalBody>
             <ModalFooter>
-            <button className="btn-inputtop" onClick={handleSave}>Update</button>
+            <button className="btn-inputtop" onClick={handleSave}>Create</button>
             <button className="btn-inputbot" onClick={toggle}>Cancel</button>
             </ModalFooter>
       </Modal>
