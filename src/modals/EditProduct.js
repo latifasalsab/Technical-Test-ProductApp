@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const EditProductPopup = ({modal, toggle, updateTask, taskObj}) => {
+const EditProductPopup = ({modal, toggle, updateProduct, taskObj}) => {
     const [brand, setBrand] = useState('');
     const [image, setImage] = useState('');
     const [price, setPrice] = useState('');
@@ -51,7 +51,7 @@ const EditProductPopup = ({modal, toggle, updateTask, taskObj}) => {
         taskObj["Style"] = style
         taskObj["Colour"] = colour
         taskObj["Size"] = size
-        updateTask(tempObj)
+        updateProduct(tempObj)
     }
 
     return (
