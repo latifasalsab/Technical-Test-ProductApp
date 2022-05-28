@@ -3,7 +3,7 @@ import EditProduct from '../modals/EditProduct'
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 
-const Card = ({taskObj, index, deleteTask, updateListArray}) => {
+const Card = ({taskObj, index, deleteProduct, updateListArray}) => {
     const [modal, setModal] = useState(false);
     const [detailPopup, setDetailPopup] = useState(false);
 
@@ -11,12 +11,12 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
         setModal(!modal);
     }
 
-    const updateTask = () => {
+    const updateProduct = () => {
         updateListArray()
     }
 
     const handleDelete = () => {
-        deleteTask(index)
+        deleteProduct(index)
     }
 
     const toggleDetail = () => {
@@ -57,7 +57,7 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
 
                     
                 </div>
-                <EditProduct modal = {modal} toggle = {toggle} updateTask = {updateTask} taskObj = {taskObj}/>
+                <EditProduct modal = {modal} toggle = {toggle} updateProduct = {updateProduct} taskObj = {taskObj}/>
                 
             </div>
         </div>
